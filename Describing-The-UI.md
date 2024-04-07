@@ -60,7 +60,7 @@ export default function Gallery() {
 
 ```
 
-![alt text](image.png)
+![alt text](./image/image.png)
 
 ## 컴포넌트들을 가져오고 내보내기  
   
@@ -85,7 +85,7 @@ export default function Gallery() {
 }
 ```
 
-![alt text](image-1.png)
+![alt text](./image/image-1.png)
 
 
 ## JSX를 사용해서 마크업 작성하기  
@@ -119,7 +119,7 @@ export default function TodoList() {
 }
 ```
 
-![alt text](image-2.png)
+![alt text](./image/image-2.png)
 
 이와 같이 기존 HTML 이 있는경우, 컨버터를 사용해서 수정할 수 있다. (Fragment 를 사용)  
 
@@ -144,7 +144,7 @@ export default function TodoList() {
 
 ```
 
-![alt text](image-3.png)
+![alt text](./image/image-3.png)
 
 ## 중괄호가 있는 JSX의 자바스크립트  
 
@@ -185,7 +185,7 @@ export default function TodoList() {
 
 ```
 
-![alt text](image-4.png)
+![alt text](./image/image-4.png)
 
 ## Props를 컴포넌트에 전달하기  
 
@@ -252,7 +252,7 @@ export function getImageUrl(person, size = 's') {
 
 ```  
 
-![alt text](image-5.png)
+![alt text](./image/image-5.png)
 
 ## 조건부 렌더링  
 
@@ -295,7 +295,7 @@ export default function PackingList() {
 
 ```
 
-![alt text](image-6.png)
+![alt text](./image/image-6.png)
 
 ## 렌더링 목록들  
 
@@ -416,7 +416,7 @@ export default function TeaSet() {
   );
 ```
 
-![alt text](image-7.png)
+![alt text](./image/image-7.png)
 
 기존 변수를 수정하는 것 대신에 prop을 전달함으로써 순수 컴포넌트를 만들 수 있습니다.  
 
@@ -436,7 +436,7 @@ export default function TeaSet() {
 }
 
 ```  
-![alt text](image-8.png)
+![alt text](./image/image-8.png)
 
 
 ## Tree로써의 UI  
@@ -445,7 +445,7 @@ export default function TeaSet() {
 
 리액트 렌더 트리는 컴포넌트들 간의 부모와 자식 관계를 나타냅니다.  
 
-![alt text](image-9.png)
+![alt text](./image/image-9.png)
 
   
 
@@ -459,7 +459,7 @@ export default function TeaSet() {
 
 이것를 모듈 종속성 트리 라고 부른다.  
 
-![alt text](image-10.png)
+![alt text](./image/image-10.png)
 
 
 종속성 트리는 클라이언트가 다운로드하고 렌더링 할 수 있도록 모든 관련된 javascript 코드를 번들하기위해   
