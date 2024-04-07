@@ -13,6 +13,7 @@ React를 사용하면 마크업, CSS 및 JavaScript를
 
 위에서 본 목차 코드는 모든 페이지에 렌더링할 수 있는 <TableOfContents /> 구성 요소로 바뀔 수 있습니다. 
 내부적으로는 여전히 article, h1 등과 같은 동일한 HTML 태그를 사용합니다.
+
 ![image](https://github.com/ektto1041/react-dev-translation-study/assets/165557124/814b1f3c-fbf6-4a7a-abef-98148aac9997)
 
 프로젝트가 점점 커짐에 따라 이미 작성한 구성 요소를 재사용하여 많은 디자인을 구성하여 개발 속도를 높일 수 있다는 것을 알게 될 것입니다. 
@@ -36,7 +37,7 @@ React 구성요소는 마크업을 뿌릴 수 있는 JavaScript 함수입니다.
 
 * 2단계: 함수 정의
 Profile() { } 함수를 사용하면 Profile이라는 이름의 JavaScript 함수를 정의할 수 있습니다.
-- React 구성 요소는 일반 JavaScript 함수이지만 이름은 대문자로 시작해야 하며 그렇지 않으면 작동하지 않습니다
+React 구성 요소는 일반 JavaScript 함수이지만 이름은 대문자로 시작해야 하며 그렇지 않으면 작동하지 않습니다
   
 * 3단계: 마크업 추가
 구성 요소는 src 및 alt 속성이 포함된 <img /> 태그를 반환합니다. 
@@ -44,14 +45,18 @@ Profile() { } 함수를 사용하면 Profile이라는 이름의 JavaScript 함�
 이 구문을 JSX라고 하며, 이를 사용하면 JavaScript 내에 마크업을 삽입할 수 있습니다.
 
 반환 문은 다음 구성 요소와 같이 한 줄에 모두 작성할 수 있습니다.
+
 ![image](https://github.com/ektto1041/react-dev-translation-study/assets/165557124/a8c64c5b-1b1c-47bd-b3e8-6de287411352)
+
 그러나 마크업이 모두 return 키워드와 같은 줄에 있지 않으면 이를 괄호 쌍으로 묶어야 합니다.
+
 ![image](https://github.com/ektto1041/react-dev-translation-study/assets/165557124/1d9bc297-0ee9-4879-9633-51e0f1d553d7)
+
 - 괄호가 없으면 return 이후 줄의 모든 코드는 무시됩니다!
 
 ## [구성 요소 사용]
 * 브라우저가 인식하는 것
-	- 대소문자의 차이점을 확인
+- 대소문자의 차이점을 확인
 	• section은 소문자이므로 React는 우리가 HTML 태그를 참조한다는 것을 알고 있습니다.
 	• <Profile />은 대문자 P로 시작하므로 React는 우리가 Profile이라는 구성 요소를 사용하기를 원한다는 것을 알고 있습니다.
 
@@ -71,9 +76,11 @@ Gallery 가 상위(부모) 구성 요소이며 각 Profile 구성요소는 하�
 컴포넌트를 한 번 정의하면 원하는 만큼 여러 장소에서 사용할 수 있습니다.
 
 - 구성 요소는 다른 구성 요소를 렌더링할 수 있지만 정의를 중첩해서는 안 됩니다.
+- 
 ![image](https://github.com/ektto1041/react-dev-translation-study/assets/165557124/c570c8ee-4270-439b-98c7-863e5c1d2f2a)
 
 - 위의 구성요소내에서 다른 구성요소를 정의하는 형태는 매우 느리고 버그를 유발합니다. 대신 최상위 수준에서 모든 구성요소를 정의하세요
+- 
 ![image](https://github.com/ektto1041/react-dev-translation-study/assets/165557124/dde784a0-9d28-44d7-99de-37dd95015394)
 
 - 하위 구성 요소에 상위 구성 요소의 일부 데이터가 필요한 경우 중첩 정의 대신 props으로 전달하세요.
