@@ -1,4 +1,4 @@
-## 1. Describing the UI
+# 1. Describing the UI
 React는 사용자 인터페이스(UI)를 렌더링하기 위한 JavaScript 라이브러리입니다.
 
 UI는 버튼, 텍스트, 이미지와 같은 작은 단위로 구성됩니다. 
@@ -7,7 +7,7 @@ React를 사용하면 이를 재사용 가능하고 중첩 가능한 구성 요�
 웹사이트부터 모바일 앱까지 화면의 모든 것은 구성 요소로 분해될 수 있습니다. 
 이 장에서는 React 구성 요소를 생성, 사용자 정의 및 조건부에 따른 표시하는 방법을 배웁니다.
 
-# [첫 번째 컴포넌트(구성 요소)]
+## [첫 번째 컴포넌트(구성 요소)]
 React 애플리케이션은 구성 요소라고 하는 독립된 UI 조각 컴포넌트로 구축됩니다. 
 
 React 컴포넌트는 마크업을 뿌릴 수 있는 JavaScript 함수입니다. 
@@ -15,5 +15,9 @@ React 컴포넌트는 마크업을 뿌릴 수 있는 JavaScript 함수입니다.
 다음은 세 가지 프로필 구성 요소를 렌더링하는 갤러리 구성 요소입니다.
 ![image](https://github.com/ektto1041/react-dev-translation-study/assets/165557124/84b4ce05-db5f-43c7-b849-15b3d81746e8)
 
+## [구성요소 가져오기(import) 및 내보내기(export)]
+하나의 파일에 많은 구성 요소를 선언할 수 있지만 큰 파일은 탐색하기 어려울 수 있습니다. 
+이 문제를 해결하려면 구성 요소를 자체 파일로 내보낸 다음 해당 구성 요소를 다른 파일에서 가져와 사용할 수 있습니다.
+![image](https://github.com/ektto1041/react-dev-translation-study/assets/165557124/f9b7395d-e2f0-4a22-be4d-42df0c017f62)
 
 
