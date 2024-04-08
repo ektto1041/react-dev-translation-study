@@ -97,8 +97,88 @@ return (
 
 ### 컴포넌트 사용하기
 
+이제 Profile 컴포넌트를 정의했으므로, 이를 다른 컴포넌트들과 중첩할 수 있다. 예를 들어, 여러 Profile 컴포넌트를 포함하고 있는 Gallery 컴포넌트를 내보내기할 수 있다.
+
+```js
+function Profile() {
+  return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />;
+}
+
+export default function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+```
+
 ### 브라우저가 보는 것
+
+- 대소문자의 차이를 주의할 것
+  - section은 소문자이므로, 이것이 HTML 태그라는 것을 리액트가 알고 있다.
+  - Profile은 대문자로 시작하므로, 컴포넌트라는 것을 리액트가 알고 있다.
+
+그리고 Profile 컴포넌트는 img와 같은 더 많은 HTML을 포함한다. 결국 브라우저가 보는 것은 아래와 같다.
+
+```html
+<section>
+  <h1>Amazing scientists</h1>
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+</section>
+```
 
 ### 컴포넌트 중첩 및 구성하기
 
+컴포넌트는 보통의 자바스크립트 함수여서, 한 파일 안에 여러 컴포넌트가 있을 수 있다. 이는 컴포넌트의 큐모가 상대적으로 작거나, 서로 밀접하게 연관되어 있는 경우에 편리하다. 파일이 복잡해지면 언제든지 Profile 컴포넌트를 별도의 파일로 이동시킬 수 있다. 이 작업과 관련해서는 'import에 관하여'페이지에서 곧 배울 예정이다.
+
+Profile 컴포넌트는 Gallery 컴포넌트 내부에서 여러 번 렌더링 되기 때문에, Gallery 컴포넌트를 부모 요소로, Profile 컴포넌트를 자식 요소라고 부른다. 이것이 리액트의 마법 중 일부인데, 컴포넌트를 한 번 정의하면 원하는 만큼 여러 장소에서 사용할 수 있기 때문이다.
+
+- 주의!
+
+  - 컴포넌트는 다른 컴포넌트를 렌더링 할 수 있지만, 중첩해서 정의하는 것은 안됨
+
+  ```js
+  export default function Gallery() {
+    // 🔴 Never define a component inside another component!
+    function Profile() {
+      // ...
+    }
+    // ...
+  }
+  ```
+
+  - 위와 같은 방식은 매우 느리고 버그들을 유발한다. 이렇게 하지 말고, 최상위 수준에서 컴포넌트를 정의하면 된다.
+
+  ```js
+  export default function Gallery() {
+    // ...
+  }
+  // ✅ Declare components at the top level
+  function Profile() {
+    // ...
+  }
+  ```
+
+  - 부보 요소로부터 자식 요소에 데이터 전달이 필요할 경우, 중첩해서 정의하지 말고 props로 전달해주면 된다.
+
+- 깊게 살펴보기 -> 컴포넌트는 항상 아래로 흐른다!
+  - 리액트 앱은 루트 컴포넌트에서 시작한다. 이는 보통 새 프로젝트 시작 시 자동으로 만들어진다. 예를 들어, CodeSandbox를 쓰거나 아니면 Next.js 프레임워크를 사용하는 경우, 루트 컴포넌트는 pages/index.js에 정의된다. 이 예시에서는 루트 컴포넌트를 내보냈다.
+  - 대부분의 리액트 앱은 컴포넌트를 사용한다. 이는 컴포넌트를 버튼처럼 재사용 가능한 요소들뿐만 아니라, 사이드바나 리스트와 같이 좀 더 큰 요소들, 그리고 최종적으로는 페이지 전체에도 사용 가능하다는 것을 말한다! 컴포넌트는 UI 코드와 마크업을 구성하기 위해 편리한 방법인데, 컴포넌트가 오직 한 번만 사용되는 경우에도 그렇다.
+  - 리액트 기반 프레임워크는 이를 한 단계 더 발전시킨다. 빈 HTML을 사용하고 리액트가 자바스크립트로 페이지 관리를 넘기는 대신, 리액트 컴포넌트에서 자동으로 HTML을 생성한다. 이를 통해 자바스크립트 코드가 로드되기 전에 앱에서 일부 콘텐츠를 표시할 수 있다.
+  - 여전히 많은 웹사이트는 기존 HTML 페이지에 상호작용을 추가하기 위해서 리액트를 사용한다. 이들은 전체 페이지에 대해 단일 루트 컴포넌트 대신 많은 루트 컴포넌트를 갖는다. 리액트는 필요한 만큼 얼마든지 사용될 수 있다.
+
 ### 요약
+
+방금 리액트의 첫 맛을 보았다. 몇 가지 핵심 사항을 요약해보겠다.
+
+- React를 사용하면 앱의 재사용 가능한 UI 요소인 컴포넌트를 만들 수 있다.
+- React 앱에서 UI의 모든 부분은 컴포넌트이다.
+- React 컴포넌트는 일반 JavaScript 함수인데, 다음과 같은 특이사항을 갖는다.
+  - 이름은 항상 대문자로 시작된다.
+  - JSX 마크업을 반환한다.
