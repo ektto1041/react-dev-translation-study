@@ -1,4 +1,4 @@
-![image](https://github.com/ektto1041/react-dev-translation-study/assets/165557124/006446d0-962b-4cea-bb67-a517a102aa7b)# 컴포넌트 import & export 하기
+# 컴포넌트 import & export 하기
 컴포넌트의 특수성은 재사용 가능성에 있습니다. 
 즉, 다른 컴포넌트로 구성된 또 하나의 컴포넌트를 만들 수 있습니다. 
 그러나 점점 더 많은 컴포넌트를 중첩한 형태는 차라리 구성 요소를 따로 다른 파일로 분할하는 것이 오히려 합리적일 때가 많습니다. 
